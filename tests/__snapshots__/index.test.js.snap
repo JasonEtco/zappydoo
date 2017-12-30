@@ -6,8 +6,6 @@ exports[`zappydoo compile should return the correct string 1`] = `"Hello and wel
 
 exports[`zappydoo precompile should be able to run the function later 1`] = `"Hello and welcome to Fenway park! The weather is sunny today. Enjoy your day Jason!"`;
 
-exports[`zappydoo precompile should return a function 1`] = `"data => this.render(templateArray, map, data)"`;
-
 exports[`zappydoo render should render the correct string 1`] = `"Hello and welcome to Fenway park! The weather is sunny today. Enjoy your day Jason!"`;
 
 exports[`zappydoo render throws if the property does not exist 1`] = `"The property adjective does not exist in the provided object."`;

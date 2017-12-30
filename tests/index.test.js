@@ -23,7 +23,7 @@ describe('zappydoo', () => {
 
     it('should return a function', () => {
       const renderer = zap.precompile(templates.basic)
-      expect(renderer.toString()).toMatchSnapshot()
+      expect(typeof renderer).toBe('function')
     })
 
     it('should be able to run the function later', () => {

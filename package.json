@@ -4,7 +4,7 @@
   "description": "Dead-simple template engine. Nothing special, just straight-up variable replacement, but real fast.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest && standard",
+    "test": "jest --coverage && standard",
     "test:update": "jest -u"
   },
   "keywords": [],
