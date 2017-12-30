@@ -1,0 +1,1 @@
+Hello and welcome to {{ park }} park! The weather is {{ weather }} today. Enjoy your day {{ user }}!

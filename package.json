@@ -1,0 +1,22 @@
+{
+  "name": "zappydoo",
+  "version": "1.0.0",
+  "description": "Dead-simple template engine. Nothing special, just straight-up variable replacement, but real fast.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest && standard",
+    "test:update": "jest -u"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.0.4",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
