@@ -1,4 +1,4 @@
-# Zappydoo
+# Zappydoo &middot; [![Build Status](https://img.shields.io/travis/JasonEtco/zappydoo/master.svg)](https://travis-ci.org/JasonEtco/zappydoo) [![Codecov](https://img.shields.io/codecov/c/github/JasonEtco/zappydoo.svg)](https://codecov.io/gh/JasonEtco/zappydoo/)
 
 Dead-simple template engine. Nothing special, just straight-up variable replacement, but real fast.
 
