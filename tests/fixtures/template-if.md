@@ -1,7 +1,7 @@
 Hello and welcome to {{ park }} park!
 
 {% if weather === 'sunny' %}
-You should go outside!
+  You should go outside!
 {% else %}
-You should not go outside!
+  You should not go outside!
 {% endif %}
