@@ -23,7 +23,7 @@ describe('regexes', () => {
   describe('block', () => {
     it('returns the correct block', () => {
       const match = regexes.block.exec(templates.blockEnds)
-      console.log(match)
+      expect(match).toMatchSnapshot()
     })
   })
 })
