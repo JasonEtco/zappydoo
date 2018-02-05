@@ -1,9 +1,10 @@
 const IfElse = require('../lib/if-else')
 
 describe('if-else', () => {
-  let ifElse
+  let ifElse, data
 
   beforeEach(() => {
+    data = { foo: 'bar' }
     ifElse = new IfElse()
   })
 
@@ -13,6 +14,15 @@ describe('if-else', () => {
       expect(res).toEqual({
         x: 'left',
         y: 'right',
+        comparator: '==='
+      })
+    })
+
+    it('returns the correct match', () => {
+      const res = ifElse.parse('foo === "bar"', data)
+      expect(res).toEqual({
+        x: data.foo,
+        y: 'bar',
         comparator: '==='
       })
     })
