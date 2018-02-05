@@ -18,6 +18,20 @@ describe('if-else', () => {
     })
   })
 
+  describe('resolve', () => {
+    it('returns the correct string if the if is true', () => {
+      const block = new IfElse('one === one', 'hello!')
+      const res = block.resolve()
+      expect(res).toBe('hello!')
+    })
+
+    it('returns an empty string if the if is false', () => {
+      const block = new IfElse('one === two', 'hello!')
+      const res = block.resolve()
+      expect(res).toBe('')
+    })
+  })
+
   describe('compare', () => {
     it('works with ===', () => {
       expect(ifElse.compare('hi', 'hi', '===')).toBeTruthy()
