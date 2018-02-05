@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`regexes var returns the correct variable 1`] = `
+Array [
+  "{{ example }}",
+  "example",
+]
+`;

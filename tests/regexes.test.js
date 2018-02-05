@@ -13,6 +13,13 @@ describe('regexes', () => {
     }
   })
 
+  describe('var', () => {
+    it('returns the correct variable', () => {
+      const match = regexes.var.exec('{{ example }}')
+      expect(match).toMatchSnapshot()
+    })
+  })
+
   describe('block', () => {
     it('returns the correct block', () => {
       const match = regexes.block.exec(templates.blockEnds)
