@@ -9,7 +9,7 @@ describe('if-else', () => {
 
   describe('parse', () => {
     it('returns the correct match', () => {
-      const res = ifElse.parse('left === right')
+      const res = ifElse.parse('"left" === "right"')
       expect(res).toEqual({
         x: 'left',
         y: 'right',
@@ -20,13 +20,13 @@ describe('if-else', () => {
 
   describe('resolve', () => {
     it('returns the correct string if the if is true', () => {
-      const block = new IfElse('one === one', 'hello!')
+      const block = new IfElse('"one" === "one"', 'hello!')
       const res = block.resolve()
       expect(res).toBe('hello!')
     })
 
     it('returns an empty string if the if is false', () => {
-      const block = new IfElse('one === two', 'hello!')
+      const block = new IfElse('"one" === "two"', '"hello"!')
       const res = block.resolve()
       expect(res).toBe('')
     })
