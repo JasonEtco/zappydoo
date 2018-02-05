@@ -8,7 +8,8 @@ describe('zappydoo', () => {
   beforeEach(() => {
     templates = {
       basic: fs.readFileSync(path.join(__dirname, 'fixtures', 'template.md'), 'utf8'),
-      missing: fs.readFileSync(path.join(__dirname, 'fixtures', 'template-missing.md'), 'utf8')
+      missing: fs.readFileSync(path.join(__dirname, 'fixtures', 'template-missing.md'), 'utf8'),
+      if: fs.readFileSync(path.join(__dirname, 'fixtures', 'template-if.md'), 'utf8')
     }
 
     data = { park: 'Fenway', weather: 'sunny', user: 'Jason' }
@@ -74,6 +75,15 @@ describe('zappydoo', () => {
     it('leaves undefined variables blank', () => {
       const compiled = Zappydoo.compile(templates.missing, data)
       expect(compiled).toMatchSnapshot()
+    })
+
+    it('works with if statements', () => {
+      const compiled = Zappydoo.compile(templates.if, data)
+      expect(compiled).toMatchSnapshot()
+
+      const d = Object.assign({}, data, { weather: false })
+      const compiledFalse = Zappydoo.compile(templates.if, d)
+      expect(compiledFalse).toMatchSnapshot()
     })
   })
 })
