@@ -7,13 +7,15 @@ exports[`zappydoo compile should return the correct string 1`] = `"Hello and wel
 exports[`zappydoo compile works with if statements 1`] = `
 "Hello and welcome to Fenway park!
 
+
   You should go outside!
+"
 `;
 
 exports[`zappydoo compile works with if statements 2`] = `
 "Hello and welcome to Fenway park!
 
-
+"
 `;
 
 exports[`zappydoo precompile should be able to run the function later 1`] = `"Hello and welcome to Fenway park! The weather is sunny today. Enjoy your day Jason!"`;
