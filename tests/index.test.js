@@ -7,9 +7,9 @@ describe('zappydoo', () => {
 
   beforeEach(() => {
     templates = {
-      basic: fs.readFileSync(path.join(__dirname, 'fixtures', 'template.md'), 'utf8'),
-      missing: fs.readFileSync(path.join(__dirname, 'fixtures', 'template-missing.md'), 'utf8'),
-      if: fs.readFileSync(path.join(__dirname, 'fixtures', 'template-if.md'), 'utf8')
+      basic: fs.readFileSync(path.join(__dirname, 'fixtures', 'templates', 'template.md'), 'utf8'),
+      missing: fs.readFileSync(path.join(__dirname, 'fixtures', 'templates', 'template-missing.md'), 'utf8'),
+      if: fs.readFileSync(path.join(__dirname, 'fixtures', 'templates', 'template-if.md'), 'utf8')
     }
 
     data = { park: 'Fenway', weather: 'sunny', user: 'Jason' }
