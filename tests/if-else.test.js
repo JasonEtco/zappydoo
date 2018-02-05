@@ -7,6 +7,17 @@ describe('if-else', () => {
     ifElse = new IfElse()
   })
 
+  describe('parse', () => {
+    it('returns the correct match', () => {
+      const res = ifElse.parse('left === right')
+      expect(res).toEqual({
+        x: 'left',
+        y: 'right',
+        comparator: '==='
+      })
+    })
+  })
+
   describe('compare', () => {
     it('works with ===', () => {
       expect(ifElse.compare('hi', 'hi', '===')).toBeTruthy()
