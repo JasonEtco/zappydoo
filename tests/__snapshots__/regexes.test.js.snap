@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`regexes block returns the correct block 1`] = `
+Array [
+  "{% name value %}
+  I have content!
+{% endname %}",
+  "name",
+  "value",
+]
+`;
+
 exports[`regexes var returns the correct variable 1`] = `
 Array [
   "{{ example }}",
