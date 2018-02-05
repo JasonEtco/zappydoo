@@ -1,15 +1,13 @@
 const { regexes } = require('../lib/constants')
-const fs = require('fs')
-const path = require('path')
+const { readFile } = require('./helpers')
 
 describe('regexes', () => {
   let templates
-  const pather = str => path.join(__dirname, 'fixtures', 'regexes', str)
 
   beforeEach(() => {
     templates = {
-      blockEnds: fs.readFileSync(pather('block-ends.md'), 'utf8'),
-      blockNoEnd: fs.readFileSync(pather('block-no-end.md'), 'utf8')
+      blockEnds: readFile('regexes', 'block-ends.md'),
+      blockNoEnd: readFile('regexes', 'block-no-end.md')
     }
   })
 

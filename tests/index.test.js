@@ -1,15 +1,14 @@
-const fs = require('fs')
-const path = require('path')
 const Zappydoo = require('../lib')
+const { readFile } = require('./helpers')
 
 describe('zappydoo', () => {
   let data, templates
 
   beforeEach(() => {
     templates = {
-      basic: fs.readFileSync(path.join(__dirname, 'fixtures', 'templates', 'template.md'), 'utf8'),
-      missing: fs.readFileSync(path.join(__dirname, 'fixtures', 'templates', 'template-missing.md'), 'utf8'),
-      if: fs.readFileSync(path.join(__dirname, 'fixtures', 'templates', 'template-if.md'), 'utf8')
+      basic: readFile('templates', 'template.md'),
+      missing: readFile('templates', 'template-missing.md'),
+      if: readFile('templates', 'template-if.md')
     }
 
     data = { park: 'Fenway', weather: 'sunny', user: 'Jason' }
