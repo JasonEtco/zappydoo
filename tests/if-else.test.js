@@ -36,9 +36,15 @@ describe('if-else', () => {
     })
 
     it('returns an empty string if the if is false', () => {
-      const block = new IfElse('"one" === "two"', '"hello"!')
+      const block = new IfElse('"one" === "two"', 'hello!')
       const res = block.resolve()
       expect(res).toBe('')
+    })
+
+    it('returns the else string if the if is false and there is an else', () => {
+      const block = new IfElse('"one" === "two"', 'hello!{% else %}goodbye!')
+      const res = block.resolve()
+      expect(res).toBe('goodbye!')
     })
   })
 
