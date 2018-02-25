@@ -1,14 +1,14 @@
-const fs = require('fs')
-const path = require('path')
 const Zappydoo = require('../lib')
+const { readFile } = require('./helpers')
 
 describe('zappydoo', () => {
   let data, templates
 
   beforeEach(() => {
     templates = {
-      basic: fs.readFileSync(path.join(__dirname, 'fixtures', 'template.md'), 'utf8'),
-      missing: fs.readFileSync(path.join(__dirname, 'fixtures', 'template-missing.md'), 'utf8')
+      basic: readFile('templates', 'template.md'),
+      missing: readFile('templates', 'template-missing.md'),
+      if: readFile('templates', 'template-if.md')
     }
 
     data = { park: 'Fenway', weather: 'sunny', user: 'Jason' }
@@ -74,6 +74,15 @@ describe('zappydoo', () => {
     it('leaves undefined variables blank', () => {
       const compiled = Zappydoo.compile(templates.missing, data)
       expect(compiled).toMatchSnapshot()
+    })
+
+    it('works with if statements', () => {
+      const compiled = Zappydoo.compile(templates.if, data)
+      expect(compiled).toMatchSnapshot()
+
+      const d = Object.assign({}, data, { weather: false })
+      const compiledFalse = Zappydoo.compile(templates.if, d)
+      expect(compiledFalse).toMatchSnapshot()
     })
   })
 })
