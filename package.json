@@ -1,6 +1,6 @@
 {
   "name": "zappydoo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dead-simple template engine. Nothing special, just straight-up variable replacement, but real fast.",
   "main": "lib/index.js",
   "repository": "https://github.com/JasonEtco/zappydoo.git",
