@@ -10,7 +10,7 @@ describe('if-else', () => {
 
   describe('parse', () => {
     it('returns the correct match', () => {
-      const res = ifElse.parse('"left" === "right"')
+      const res = ifElse.parse([null, '"left"', '===', '"right"'])
       expect(res).toEqual({
         x: 'left',
         y: 'right',
@@ -19,7 +19,7 @@ describe('if-else', () => {
     })
 
     it('returns the correct match', () => {
-      const res = ifElse.parse('foo === "bar"', data)
+      const res = ifElse.parse([null, 'foo', '===', '"bar"'], data)
       expect(res).toEqual({
         x: data.foo,
         y: 'bar',
@@ -37,6 +37,26 @@ describe('if-else', () => {
 
     it('returns an empty string if the if is false', () => {
       const block = new IfElse('"one" === "two"', 'hello!')
+      const res = block.resolve()
+      expect(res).toBe('')
+    })
+
+    it('resolves falsy if the variable is undefined', () => {
+      const block = new IfElse('variable', 'hello!')
+      const res = block.resolve()
+      expect(res).toBe('')
+    })
+
+    it('resolves truthy if the variable is defined', () => {
+      const data = { variable: true }
+      const block = new IfElse('variable', 'hello!', data)
+      const res = block.resolve()
+      expect(res).toBe('hello!')
+    })
+
+    it('resolves falsy if the variable is falsy', () => {
+      const data = { variable: false }
+      const block = new IfElse('variable', 'hello!', data)
       const res = block.resolve()
       expect(res).toBe('')
     })
